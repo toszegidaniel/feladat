@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select  id="user" onchange="show(this)">
+        <option value="">Válassz...</option>
+      
+    </select>
+    <script>
+        let users = [{ "name": "John", "age": 30, "car": null },
+                    { "name": "Carlos", "age": 25, "car": "Toyota" },
+                    { "name": "Brendan", "age": 65, "car": "BMW" },
+                    { "name": "Carol", "age": 34, "car": "Mercedez" },
+                    { "name": "Conway", "age": 36, "car": "Mazda" }]
+
+        let opStr = users.map(obj =>`<option>${obj.name}</option>`).join("")
+        console.log(opStr)
+        document.getElementById('user').innerHTML+=opStr
+        
+        function show(obj){
+        let selUser = obj.value
+        console.log(selUser)
+        }
+    </script>
+</body>
+</html>

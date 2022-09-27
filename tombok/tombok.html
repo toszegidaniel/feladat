@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <ol></ol>
+    <script>
+        const uId = Math.random().toString(36).slice(2)
+        console.log(uId)
+
+        let szamok=[2,3,46,78,543,21,1,3456,100]
+        szamok.forEach((item , index) => console.log(item , index) )
+
+        let paros=[]
+        for(let item of szamok){
+            if(item%2 == 0){
+                paros.push(item)
+                
+            }
+        }
+        console.log(paros)
+
+        let paros2 = szamok.filter(item => item%2 == 0)
+        console.log(paros2)
+
+        let nagyobb10 = szamok.filter(item => item > 10)
+        console.log(nagyobb10)
+
+
+
+        let keresszam = szamok.find(item => item == 100)
+        console.log(keresszam ? "van benne" : "nincs benne")
+
+        let indexszam = szamok.findIndex(item => item == 100)
+        console.log(indexszam)
+
+
+        let ujTomb = szamok.map(item => `<li> ${item} </li>`)
+        console.log(ujTomb)
+        let liStr = ujTomb.join('')
+        console.log(liStr) 
+        document.querySelector('ul').innerHTML = liStr
+
+        let olStr = szamok.map(item => `<li> ${item} </li>`).join('')
+        document.querySelector('ol').innerHTML = olStr
+
+        let osszegez = szamok.reduce((acc , item) => acc+ item,0)
+        console.log(osszegez)
+
+        let liOssz = szamok.reduce((acc , item) => acc+ `<li> ${item} </li>`,'')
+        console.log(liOssz)
+        
+
+    </script>
+</body>
+</html>
