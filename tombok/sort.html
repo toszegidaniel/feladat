@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let szamok = [12 , 24 , 534 , 1 , 42 , 5 , 3242 ]
+        let allatok = ["beka" , "majom" , "kutya" , "aszity" , "eger"];
+        console.log(szamok)
+        console.log(szamok.sort())
+
+        console.log(szamok.sort((a,b) => a-b))
+        console.log(szamok.sort((a,b) => b-a))
+
+        console.log(allatok)
+        console.log(allatok.sort((a,b) => a > b ? 1 : -1))
+        console.log(allatok.sort((a,b) => a > b ? -1 : 1))
+
+        console.log(szamok.sort(() => 0.5-Math.random()))
+
+        let users = [{ id:1, name: "John", age : 30, car: null },
+                    {  id:2, name: "Carlos", age: 25, car: "Toyota" },
+                    {  id:3, name: "Brendan", age: 65, car: "BMW" },
+                    {  id:4, name: "Carol", age: 34, car: "Mercedez" },
+                    {  id:5, name: "Conway", age: 36, car: "Mazda" }]
+        console.log(users)
+
+        console.log(users.sort((o1 , o2) => o1.name > o2.name ? 1 : -1))
+    </script>
+</body>
+</html>
